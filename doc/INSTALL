@@ -1,0 +1,23 @@
+1) Add these lines into /etc/xinc/system.xml xinc configuration file:
+
+    <plugin filename="/path/to/plugin/xinc-force-build-read-only/lib/Gedrox/Plugin/ModificationSet/ForceBuild.php" classname="Gedrox_Plugin_ModificationSet_ForceBuild"/>
+    <plugin filename="/path/to/plugin/xinc-force-build-read-only/lib/Gedrox/Plugin/Gui/ForceBuild.php" classname="Gedrox_Plugin_Gui_ForceBuild"/>
+
+2) Add this line
+
+    <forcebuild />
+
+in the project configuration file (under /etc/xinc/conf.d/) under XML node /project/modificationset.
+E.g. such configuration
+
+    <project name="...">
+        ...
+        <cron timer="*/5 * * * *"/>
+        <modificationset>
+            <svn directory="${dir}" />
+            <forcebuild />
+        </modificationset>
+        ...
+    </project>
+
+will run check for SVN modifications or build queue every 5 minutes (6 minutes in fact).
