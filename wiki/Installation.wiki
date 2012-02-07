@@ -14,7 +14,7 @@
 <forcebuild />
 }}}
   in the project configuration file (under /etc/xinc/conf.d/) under XML node /project/modificationset.
-  E.g. such configuration
+  Example:
 {{{
 <project name="...">
     ...
@@ -26,4 +26,8 @@
     ...
 </project>
 }}}
-  will run check for SVN modifications or build queue every 5 minutes (6 minutes in fact).
+  # Check the HTTP server user has permission to create a file in the project data folder "/var/xinc/status/{project_name}/". For some reason folders "/var/xinc/" and "/var/xinc/status/" didn't have listing permission for the owner out of the box. Had to run these commands:
+{{{
+$ chmod +x /var/xinc/
+$ chmod +x /var/xinc/status/
+}}}
