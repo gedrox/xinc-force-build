@@ -32,7 +32,7 @@ class Gedrox_Plugin_Gui_ForceBuild_Widget implements Xinc_Gui_Widget_Interface
 //
 //	private $build;
         
-    public function __construct(Xinc_Plugin_Interface &$plugin)
+    public function __construct(Xinc_Plugin_Interface $plugin)
     {
         $this->_plugin = $plugin;
 //        try {
@@ -86,7 +86,7 @@ class Gedrox_Plugin_Gui_ForceBuild_Widget implements Xinc_Gui_Widget_Interface
         
     }
     
-    public function registerExtension($extensionPoint, &$extension)
+    public function registerExtension($extensionPoint, $extension)
     {
     }
     
