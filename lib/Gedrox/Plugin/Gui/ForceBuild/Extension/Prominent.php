@@ -13,7 +13,7 @@ class Gedrox_Plugin_Gui_ForceBuild_Extension_Prominent
     {
         return 'Force Build';
     }
-    public function getContent(Xinc_Build_Interface &$build)
+    public function getContent(Xinc_Build_Interface $build)
     {
 
         $projectName = $build->getProject()->getName();
