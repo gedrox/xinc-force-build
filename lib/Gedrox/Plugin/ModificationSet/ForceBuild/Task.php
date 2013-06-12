@@ -13,7 +13,7 @@ class Gedrox_Plugin_ModificationSet_ForceBuild_Task extends Xinc_Plugin_Repos_Mo
          return "forcebuild";
     }
 	
-	public function checkModified(Xinc_Build_Interface &$build)
+	public function checkModified(Xinc_Build_Interface $build)
     {
         return $this->_plugin->checkModified($build);
     }
